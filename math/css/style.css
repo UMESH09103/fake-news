@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.main-bg {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #6EE7B7, #3B82F6, #9333EA);
+  background-size: 300% 300%;
+  animation: gradientMove 10s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  padding: 40px;
+  width: 420px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  color: white;
+  animation: floatIn 0.8s ease forwards;
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+@keyframes floatIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-bottom: 25px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  width: 60%;
+  font-size: 15px;
+  outline: none;
+  text-align: center;
+  transition: 0.3s;
+}
+
+input:focus {
+  box-shadow: 0 0 10px #fff;
+}
+
+.btn {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.add {
+  background: #22c55e;
+  color: white;
+}
+
+.add:hover {
+  transform: scale(1.05);
+  background: #16a34a;
+}
+
+.clear {
+  background: #ef4444;
+  color: white;
+}
+
+.clear:hover {
+  transform: scale(1.05);
+  background: #dc2626;
+}
+
+.calc {
+  width: 100%;
+  margin-top: 15px;
+  background: #3b82f6;
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+.calc:hover {
+  background: #2563eb;
+  transform: scale(1.03);
+}
+
+.data-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  min-height: 40px;
+}
+
+.data-item {
+  background: rgba(255,255,255,0.2);
+  padding: 6px 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: popIn 0.4s forwards;
+}
+
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-box {
+  margin-top: 20px;
+  background: rgba(255,255,255,0.2);
+  padding: 15px;
+  border-radius: 15px;
+  text-align: left;
+  line-height: 1.8;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
